@@ -1,0 +1,15 @@
+﻿<footer id="footer" class="f-cf">
+  <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+<% if (page.mathjax){ %>
+<%- partial('mathjax') %>
+<% } %>
+  <%= theme.mail %>
+  <% if (theme.social) { %>
+    <% _.forEach(theme.social, function(value, key) { %>
+      <% if (value) { %>
+        · <a href="<%= url_for(value) %>" target="_blank" class="nav-icn"><%= key %></a>
+      <% } %>
+    <% }); %>
+  <% } %>
+  <span class="copyright"><%= theme.copyright %></span>
+</footer>
